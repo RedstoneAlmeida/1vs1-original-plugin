@@ -1,0 +1,32 @@
+name: 1vs1-original
+main: 1vs1\Main
+version: "Dev"
+api: [1.0.0]
+author: RedstoneAlmeida
+commands:
+ arena:
+  permission: onexone.command.arena
+  description: SG HYBRID Main Command
+  usage: /fsg <set|remove>
+ lobby:
+  permission: onexone.command.lobby
+  description: back to lobby
+  usage: /lobby
+permissions:
+ onexone.*:
+  description: the main permission
+  default: op
+  children:
+   onexone.command.*:
+    description: use commands in plugin
+    default: op
+    children:
+     onexone.command.lobby:
+      description: back to lobby
+      default: true
+     onexone.command.arena:
+      description: set 1vs1 arena
+      default: op
+   onexone.touch.startgame:
+    description: click the sign and join the game
+    default: true
